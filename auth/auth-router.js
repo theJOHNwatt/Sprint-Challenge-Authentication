@@ -17,7 +17,7 @@ router.post('/register', (req, res) => {
 
     Auth.add(user)
       .then(saved => {
-        res.status(201).json(saved);
+        res.status(201).json({registered: `Added ${user.username}`});
       })
       .catch(error => {
         res.status(500).json({error: 'User added with an error'});
